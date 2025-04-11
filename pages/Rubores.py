@@ -2,13 +2,18 @@ from functions import main_page
 import streamlit as st
 import pandas as pd
 
-df = pd.read_excel("Inventario.xlsx", sheet_name = "Rubores")
+sheet_name = "Rubores"
+df = pd.read_excel("LEIK - Catálogo Web.xlsx", sheet_name = sheet_name)
 
 for index, row in df.iterrows():
-    st.header(row["Nombre del Producto"])
-    st.image("images/" + row["Imagen"])
-    st.write(row["Descripcion"])
-    st.info(f"Precio: $ {row["Valor"]}")
-    st.info(f"Disponibilidad: {row["Disponible"]}")
-
+    st.header(row["Producto"])
+    st.image("images/" + row["Imagen 1"])
+    st.write(row["Descripción"])
+    if row["Disponibilidad"] == "Si":
+        if row["Oferta"] == "Si":
+            st.info(f"COP {int(row["Precio con Descuento"])}")
+        else:
+            st.info(f"COP {int(row["Precio"])}")
+    else:
+        st.info("No Disponible")
 main_page()

@@ -2,7 +2,7 @@ from functions import main_page
 import streamlit as st
 import pandas as pd
 
-sheet_name = "Paletas"
+sheet_name = "Delineadores"
 df = pd.read_excel("LEIK - Catálogo Web.xlsx", sheet_name = sheet_name)
 
 for index, row in df.iterrows():

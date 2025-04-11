@@ -37,12 +37,12 @@ col7, col8, col9, col10 = st.columns(4)
 with col7:
     button1 = st.button("Paletas", use_container_width=True)
     if button1:
-        st.switch_page("pages/Paletas.py")
+        st.switch_page("pages/Bases.py")
 
 with col8:
     button2 = st.button("Labiales",use_container_width=True)
     if button2:
-        st.switch_page("pages/Labiales.py")
+        st.switch_page("pages/Brochas.py")
 
 with col9:
     button3 = st.button("Correctores",use_container_width=True)
@@ -52,7 +52,7 @@ with col9:
 with col10:
     button4 = st.button("Rubores",use_container_width=True)
     if button4:
-        st.switch_page("pages/Rubores.py")
+        st.switch_page("pages/Corporales.py")
 
 st.title("")
 
