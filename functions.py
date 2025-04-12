@@ -63,5 +63,3 @@ def structure(sheet_name):
                         st.info(f"COP {int(row["Precio"])}")
                 else:
                     st.info("No Disponible")
-
-        main_page()
