@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 from click.formatting import iter_rows
 import math
+from PIL import Image
 
 def main_page():
         st.page_link("1-Inicio.py", label = "Volver al inicio")
@@ -19,7 +20,7 @@ def structure(sheet_name):
         with col1:
             for index, row in df[:n].iterrows():
                 st.write(row["Producto"])
-                st.image("images/" + row["Imagen 1"], width=400)
+                st.image("images/" + row["Imagen 1"], width=120)
                 if row["Disponibilidad"] == "Si":
                     if row["Oferta"] == "Si":
                         st.info(f"COP {int(row["Precio con Descuento"])}")
@@ -31,7 +32,7 @@ def structure(sheet_name):
         with col2:
             for index, row in df[n:(2*n)].iterrows():
                 st.write(row["Producto"])
-                st.image("images/" + row["Imagen 1"], width=400)
+                st.image("images/" + row["Imagen 1"], width=120)
                 if row["Disponibilidad"] == "Si":
                     if row["Oferta"] == "Si":
                         st.info(f"COP {int(row["Precio con Descuento"])}")
@@ -43,7 +44,7 @@ def structure(sheet_name):
         with col3:
             for index, row in df[(2*n):(3*n)].iterrows():
                 st.write(row["Producto"])
-                st.image("images/" + row["Imagen 1"], width=400)
+                st.image("images/" + row["Imagen 1"], width=120)
                 if row["Disponibilidad"] == "Si":
                     if row["Oferta"] == "Si":
                         st.info(f"COP {int(row["Precio con Descuento"])}")
@@ -55,7 +56,7 @@ def structure(sheet_name):
         with col4:
             for index, row in df[(3*n):].iterrows():
                 st.write(row["Producto"])
-                st.image("images/" + row["Imagen 1"], width=400)
+                st.image("images/" + row["Imagen 1"], width=120)
                 if row["Disponibilidad"] == "Si":
                     if row["Oferta"] == "Si":
                         st.info(f"COP {int(row["Precio con Descuento"])}")
@@ -63,5 +64,3 @@ def structure(sheet_name):
                         st.info(f"COP {int(row["Precio"])}")
                 else:
                     st.info("No Disponible")
-
-        main_page()
